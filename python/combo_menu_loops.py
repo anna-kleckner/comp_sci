@@ -1,8 +1,8 @@
-def main():
+def user_order():
     total_price = 0
     user_order = []
 
-    print("Welcome to my shop! \nWe have three types of sandwiches: Chicken ($2), Beef ($3), Tofu ($4)")
+    print("\nWe have three types of sandwiches: Chicken ($2), Beef ($3), Tofu ($4)")
     
     sandwiches = {
         "chicken": 2,
@@ -64,5 +64,16 @@ def main():
         total_price = total_price + (sandwiches[user_sandwich]) + (0.5 * ketchup)
         print(f"\nYou ordered a {user_order[0]} sandwich")
         print(f"Your total is ${total_price:.2f}")
+
+def main():
+    print("Welcome to my shop!")
+    user_order()
+   
+    order_again = str(input(f"\nWould you like to order agin? (yes or no) "))
+    while order_again == "yes":
+        user_order()
+        order_again = str(input(f"\nWould you like to order agin? (yes or no) "))
+    if order_again != "yes":
+        print(f"\nThank you for coming to my shop!")
 
 main()
